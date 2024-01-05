@@ -3,6 +3,7 @@
 // jQuery selectors
 const currentDay = $("#currentDay");
 
+// shows current day and time at the top of page
 function showCurrentTime() {
   var now = dayjs().format("DD MMMM YYYY, HH:mm:ss A");
   currentDay.text(now);
