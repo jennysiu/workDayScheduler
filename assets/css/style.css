@@ -38,7 +38,7 @@ header {
 .timeBlock {
   display: flex;
   justify-content: space-between;
-  padding: 3%;
+  height: 40px;
 
   
 }
@@ -74,7 +74,7 @@ header {
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #fcf5b4;
   color: white;
 }
 
@@ -85,6 +85,7 @@ header {
 
 .saveBtn {
   display: inline-block;
+  width: fit-content;
   /* border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
