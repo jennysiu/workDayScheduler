@@ -2,7 +2,7 @@
 
 //! Present time blocks for standard business hours when the user scrolls down.
 
-// Color-code each time block based on past, present, and future when the time block is viewed.
+//! Color-code each time block based on past, present, and future when the time block is viewed.
 
 //! Allow a user to enter an event when they click a time block
 
@@ -53,14 +53,20 @@ hours.forEach(hour => {
   timeBlock.append(textBlock)
 
   var currentHour = dayjs().format("HH");
-  console.log(currentHour)
+  // convert hours to integers so we can use comparison logics
+  var intHour = parseInt(hour);
+  var intCurrentHour = parseInt(currentHour);
 
-  // change colours based on hour relative to time
-  if (hour == currentHour) {
+  textBlock.removeClass("present past future")
+  // removes any pre-existing classes names present, past, and future for textBlock
+  // before adding appropriate ones
+
+  // change block colours based on hour relative to time
+  if (intHour == intCurrentHour) {
     textBlock.addClass("present");
-  } else if (hour < currentHour) {
+  } else if (intHour < intCurrentHour) {
     textBlock.addClass("past");
-  } else if (hour > currentHour) {
+  } else if (intHour > intCurrentHour) {
     textBlock.addClass("future")
   }
 
@@ -71,11 +77,4 @@ hours.forEach(hour => {
 
 });
 
-function blockColourCode() {
-  // grey means past
 
-
-  // yellow means now
-
-  // green means future
-}
