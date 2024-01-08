@@ -2,22 +2,12 @@
 
 //! Present time blocks for standard business hours when the user scrolls down.
 
-//! Color-code each time block based on past, present, and future when the time block is viewed.
-
-//! Allow a user to enter an event when they click a time block
-
-// Save the event in local storage when the save button is clicked in that time block.
-
-// Persist events between refreshes of a page
-
 // jQuery selectors
 const currentDay = $("#currentDay");
 const timeBlocksEl = $(".time-blocks");
 const saveBtnEl = $(".saveBtn");
 const textBlockEl = $(".texBlock")
-
-// assign global variables
-
+const clearBtnEl = $(".clear-events button")
 
 // shows current day and time at the top of page
 function showCurrentTime() {
@@ -95,4 +85,11 @@ timeBlocksEl.on("click", ".saveBtn", function() {
 
   // store in local storage, set key as the hour
   localStorage.setItem(linkedHour, eventName);
+});
+
+// clear function 
+
+$('.clearBtn').click(function() {
+  localStorage.clear();
+  $('.textBlock').val('');
 });
