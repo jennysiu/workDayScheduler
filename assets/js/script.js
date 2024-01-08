@@ -12,7 +12,9 @@
 
 // jQuery selectors
 const currentDay = $("#currentDay");
-const timeBlocks = $(".time-blocks");
+const timeBlocksEl = $(".time-blocks");
+const saveBtnEl = $(".saveBtn");
+const textBlockEl = $(".texBlock")
 
 // assign global variables
 
@@ -35,7 +37,7 @@ hours.forEach(hour => {
   // generate blocks
   let timeBlock = $("<div></div>")
   .addClass("timeBlock");
-  timeBlocks.append(timeBlock);
+  timeBlocksEl.append(timeBlock);
 
   // display hours
   let displayHour = $("<p>")
@@ -43,14 +45,14 @@ hours.forEach(hour => {
   .text(`${hour}:00`);
   timeBlock.append(displayHour);
 
-
   // generate blocks
   let textBlock = $("<input>");
   textBlock.addClass("textBlock")
   .attr("id", hour)
   .text("test writing")
-  // .attr("placeholder", "Enter event here")
-  timeBlock.append(textBlock)
+  timeBlock.append(textBlock);
+
+
 
   var currentHour = dayjs().format("HH");
   // convert hours to integers so we can use comparison logics
@@ -71,10 +73,26 @@ hours.forEach(hour => {
   }
 
   // append save button
-  let saveBtn = $("<button>");
-  saveBtn.addClass("saveBtn")
+  const saveBtn = $("<button>");
+  saveBtn.addClass("saveBtn");
   timeBlock.append(saveBtn);
 
 });
 
+// save function 
+timeBlocksEl.on("click", ".saveBtn", function() {
+  // "this" refer to the button clicked 
+  var thisSaveBtn = $(this);
 
+  // to get associated textBlock
+  var linkedTextBlock = thisSaveBtn.siblings(".textBlock");
+  
+  // associated hour
+  var linkedHour = $(linkedTextBlock).attr('id');
+
+  // retrieves user input as the eventName
+  var eventName = linkedTextBlock.val().trim();
+
+  // store in local storage
+  localStorage.setItem(linkedHour, eventName);
+});
