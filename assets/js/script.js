@@ -45,14 +45,15 @@ hours.forEach(hour => {
   .text(`${hour}:00`);
   timeBlock.append(displayHour);
 
+  // retrieve any data from local storage
+  var savedEvent = localStorage.getItem(hour);
+
   // generate blocks
   let textBlock = $("<input>");
   textBlock.addClass("textBlock")
   .attr("id", hour)
-  .text("test writing")
+  .val(savedEvent)
   timeBlock.append(textBlock);
-
-
 
   var currentHour = dayjs().format("HH");
   // convert hours to integers so we can use comparison logics
@@ -76,7 +77,6 @@ hours.forEach(hour => {
   const saveBtn = $("<button>");
   saveBtn.addClass("saveBtn");
   timeBlock.append(saveBtn);
-
 });
 
 // save function 
@@ -93,6 +93,6 @@ timeBlocksEl.on("click", ".saveBtn", function() {
   // retrieves user input as the eventName
   var eventName = linkedTextBlock.val().trim();
 
-  // store in local storage
+  // store in local storage, set key as the hour
   localStorage.setItem(linkedHour, eventName);
 });
