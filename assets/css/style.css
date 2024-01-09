@@ -1,9 +1,11 @@
 body {
-  padding: 2%;
+  margin-left: 3%;
+  margin-right: 4%;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  background-image: url(../images/background.jpg);
+  /* background-image: url(../images/background.jpg); */
+  background-color: rgb(145, 197, 248);
   background-size: cover;
 }
 
@@ -19,9 +21,8 @@ textarea {
 header {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: white;
   border-radius: 0;
-  border-bottom: 10px solid black;
   padding: 60px;
 }
 
@@ -48,14 +49,15 @@ header {
 }
 
 .textBlock {
-  border-width: thin;
-  border-color: gray;
+  border-width: 1px;
+  border-color: rgb(62, 61, 61);
 }
 
 .hour {
   margin: 0px;
   padding-top: 1%;
   width: 8%;
+  color: white;
   text-align: right;
 }
 
@@ -90,8 +92,8 @@ header {
   border-radius: 10px;
   border-width: thin;
   border-color: transparent;
-  color: #073b4c;
-  background-color: #BEDAE3;
+  color: white;
+  background-color: #073b4c;
   
 }
 
@@ -108,6 +110,8 @@ header {
   padding: 1%;
   border-radius: 10px;
   border-color: transparent;
-  background-color: #f6a3aefc;
+  background-color: #e56e7dfc;
+  color: white;
   font-weight: bold;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
