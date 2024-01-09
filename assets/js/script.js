@@ -1,7 +1,3 @@
-//! Display the current day at the top of the calender when a user opens the planner.
-
-//! Present time blocks for standard business hours when the user scrolls down.
-
 // jQuery selectors
 const currentDay = $("#currentDay");
 const timeBlocksEl = $(".time-blocks");
@@ -87,8 +83,7 @@ timeBlocksEl.on("click", ".saveBtn", function() {
   localStorage.setItem(linkedHour, eventName);
 });
 
-// clear function 
-
+// clear all events function 
 $('.clearBtn').click(function() {
   localStorage.clear();
   $('.textBlock').val('');
