@@ -61,7 +61,7 @@ hours.forEach(hour => {
 
   // append save button
   const saveBtn = $("<button>");
-  saveBtn.addClass("saveBtn");
+  saveBtn.addClass("saveBtn fa-regular fa-floppy-disk");
   timeBlock.append(saveBtn);
 });
 
