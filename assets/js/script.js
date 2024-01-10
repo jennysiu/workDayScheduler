@@ -41,8 +41,9 @@ hours.forEach(hour => {
   .val(savedEvent)
   timeBlock.append(textBlock);
 
-  // var currentHour = dayjs().format("HH");
-    var currentHour = 10; 
+  var currentHour = dayjs().format("HH");
+  // for Testing colours  
+  // var currentHour = 10; 
   // convert hours to integers so we can use comparison logics
   var intHour = parseInt(hour);
   var intCurrentHour = parseInt(currentHour);
